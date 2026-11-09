@@ -1,0 +1,153 @@
+.shell {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  min-height: 100vh;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.logo {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: #7057d9;
+  color: white;
+  border-radius: 10px;
+  transform: rotate(-5deg);
+}
+.overline {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px !important;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  padding: 5px 0;
+}
+.hero-art {
+  position: absolute;
+  right: 60px;
+  top: 40px;
+  width: 240px;
+  height: 220px;
+  transform: rotate(-13deg);
+}
+.art-square {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  right: 0;
+  top: 10px;
+  border-radius: 28px;
+  background: #b7a3ed;
+  box-shadow: 10px 14px 0 #ded3f5;
+}
+.art-circle {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  left: 4px;
+  bottom: 0;
+  border-radius: 50%;
+  background: #7760cb;
+  border: 22px solid #8e75dd;
+  box-shadow: 0 12px 22px #6b4db722;
+}
+.art-dot {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  right: 5px;
+  bottom: 4px;
+  background: #d1e3c5;
+  border-radius: 14px;
+}
+.art-bar {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  background: #f4d48d;
+  border-radius: 50% 50% 12% 50%;
+}
+.mobile-nav {
+  display: none;
+}
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  transform: translateY(-200%);
+  padding: 12px 18px;
+  background: #242333;
+  color: #fff;
+  z-index: 1500;
+  border-radius: 8px;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+@media (min-width: 1500px) {
+  .hero-art {
+    right: 120px;
+  }
+}
+@media (max-width: 1100px) {
+  .hero-art {
+    right: 10px;
+    opacity: 0.35;
+  }
+  .hero h2 {
+    max-width: 360px;
+  }
+  .shell {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+}
+@media (max-width: 850px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+    overflow: auto;
+    gap: 6px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #8882;
+  }
+  .mobile-nav button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hero-art {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .swatches {
+    gap: 8px;
+  }
+  header .MuiChip-root {
+    display: none;
+  }
+}
